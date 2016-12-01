@@ -1,6 +1,8 @@
 const GitHub = require('github-api');
 const fs = require('fs');
 
+console.log(" ");
+
 const account = process.argv[2];
 const password = process.argv[3];
 
