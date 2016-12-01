@@ -19,12 +19,16 @@ let v7 = gh.getRepo(org, repo);
 
 fs.readFile('./mergeCommitList.txt', 'utf8', function (err, text) {
     let list = text.split('\n');
-    console.log("commitHash\tPRのID\tアカウント名");
+    console.log("commitHash\tPRのID\tPRのタイトル\tアカウント名");
     list.forEach(v => {
         v7.getCommit(v, (err, commit) => {
             const prId = commit.message.substring(20, 24);
             v7.getPullRequest(prId, (err, pr) => {
-                console.log(v + "\t#" + prId + "\t"+ pr.user.login)
+                if(pr.title){
+                    console.log(v + "\t#" + prId + "\t" + pr.title + "\t" +  pr.user.login);
+                }else{
+                    console.log(v + "\t#" + prId);
+                }
             });
         });
     });
