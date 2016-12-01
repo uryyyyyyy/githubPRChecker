@@ -17,6 +17,7 @@ let v7 = gh.getRepo(org, repo);
 
 fs.readFile('./mergeCommitList.txt', 'utf8', function (err, text) {
     let list = text.split('\n');
+    console.log("commitHash\tPRのID\tアカウント名");
     list.forEach(v => {
         v7.getCommit(v, (err, commit) => {
             const prId = commit.message.substring(20, 24);
