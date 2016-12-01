@@ -1,0 +1,14 @@
+{
+  "name": "github-kicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fetchReleaseFeatures.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "github-api": "^2.3.0"
+  }
+}
